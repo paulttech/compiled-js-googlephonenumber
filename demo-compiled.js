@@ -693,6 +693,7 @@ if(h)
 if(4==m)
 d.g("\nResult from isPossibleNumberWithReason(): "),
 d.g("IS_POSSIBLE_LOCAL_ONLY"),
+document.getElementById('validity-indicator-div').innerHTML = 'Not a valid International Number ✗',
 d.g("\nNumber is considered invalid as it is not a possible national number.");
 else{
 var p=oc(S,e);
@@ -704,12 +705,13 @@ d.g(isValidOrNot);
 alert(p);
 alert(`this is the isValid variable ${isValidOrNot}`);
 
-if (isValidOrNot === false) {
-    alert("Invalid");
-    document.getElementById('validity-indicator-div').innerHTML = 'Invalid';
-} else {
+if (isValidOrNot === true) {
     alert("Valid");
     document.getElementById('validity-indicator-div').innerHTML = 'Valid ✓';
+}
+else {
+    alert("Invalid");
+    document.getElementById('validity-indicator-div').innerHTML = 'Invalid ✗';
 }
 
 
