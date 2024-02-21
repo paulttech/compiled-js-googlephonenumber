@@ -505,10 +505,22 @@ function rc(a){var b=S,c=N(a);a=v(a,1);if(!(a in I))return 1;a=O(b,a,P(a));retur
 function tc(a,b,c,d,f,e){if(0==b.length)return 0;b=new z(b);var g;null!=c&&(g=q(c,11));null==g&&(g="NonMatch");var h=b.toString();if(0==h.length)g=20;else if(nb.test(h))h=h.replace(nb,""),A(b),b.g(Eb(h)),g=1;else{h=new RegExp(g);Fb(b);g=b.toString();if(0==g.search(h)){h=g.match(h)[0].length;var m=g.substring(h).match(ob);m&&null!=m[1]&&0<m[1].length&&"0"==L(m[1],ib)?g=!1:(A(b),b.g(g.substring(h)),g=!0)}else g=!1;g=g?5:20}f&&t(e,6,g);if(20!=g){if(2>=b.h.length)throw Error("Phone number too short after IDD");
 a=sc(b,d);if(0!=a)return t(e,1,a),a;throw Error("Invalid country calling code");}if(null!=c&&(g=v(c,10),h=""+g,m=b.toString(),0==m.lastIndexOf(h,0)&&(h=new z(m.substring(h.length)),m=q(c,1),m=new RegExp(v(m,2)),uc(h,c,null),h=h.toString(),!K(m,b.toString())&&K(m,h)||3==qc(a,b.toString(),c,-1))))return d.g(h),f&&t(e,6,10),t(e,1,g),g;t(e,1,0);return 0}
 function uc(a,b,c){var d=a.toString(),f=d.length,e=q(b,15);if(0!=f&&null!=e&&0!=e.length){var g=new RegExp("^(?:"+e+")");if(f=g.exec(d)){e=new RegExp(v(q(b,1),2));var h=K(e,d),m=f.length-1;b=q(b,16);if(null==b||0==b.length||null==f[m]||0==f[m].length){if(!h||K(e,d.substring(f[0].length)))null!=c&&0<m&&null!=f[m]&&c.g(f[1]),a.set(d.substring(f[0].length))}else if(d=d.replace(g,b),!h||K(e,d))null!=c&&0<m&&c.g(f[1]),a.set(d)}}}
-function vc(a,b,c,d){if(null==b)throw Error("The string supplied did not seem to be a phone number");if(250<b.length)throw Error("The string supplied is too long to be a phone number");var f=new z;var e=b.indexOf(";phone-context=");if(-1===e)e=null;else if(e+=15,e>=b.length)e="";else{var g=b.indexOf(";",e);e=-1!==g?b.substring(e,g):b.substring(e)}var h=e;null==h?g=!0:0===h.length?g=!1:(g=tb.exec(h),h=ub.exec(h),g=null!==g||null!==h);if(!g)throw Error("The string supplied did not seem to be a phone number");
-null!=e?("+"===e.charAt(0)&&f.g(e),e=b.indexOf("tel:"),f.g(b.substring(0<=e?e+4:0,b.indexOf(";phone-context=")))):(e=f.g,g=null!=b?b:"",h=g.search(pb),0<=h?(g=g.substring(h),g=g.replace(rb,""),h=g.search(qb),0<=h&&(g=g.substring(0,h))):g="",e.call(f,g));e=f.toString();g=e.indexOf(";isub=");0<g&&(A(f),f.g(e.substring(0,g)));if(!Db(f.toString()))throw Error("The string supplied did not seem to be a phone number");e=f.toString();if(!(Ib(c)||null!=e&&0<e.length&&nb.test(e)))throw Error("Invalid country calling code");
+function vc(a,b,c,d){if(null==b)
+throw Error("The string supplied did not seem to be a phone number");
+if(250<b.length)throw Error("The string supplied is too long to be a phone number");var f=new z;var e=b.indexOf(";phone-context=");if(-1===e)e=null;else if(e+=15,e>=b.length)e="";else{var g=b.indexOf(";",e);e=-1!==g?b.substring(e,g):b.substring(e)}var h=e;null==h?g=!0:0===h.length?g=!1:(g=tb.exec(h),h=ub.exec(h),g=null!==g||null!==h);if(!g)throw Error("The string supplied did not seem to be a phone number");
+null!=e?("+"===e.charAt(0)&&f.g(e),e=b.indexOf("tel:"),f.g(b.substring(0<=e?e+4:0,b.indexOf(";phone-context=")))):(e=f.g,g=null!=b?b:"",h=g.search(pb),0<=h?(g=g.substring(h),g=g.replace(rb,""),h=g.search(qb),0<=h&&(g=g.substring(0,h))):g="",e.call(f,g));e=f.toString();g=e.indexOf(";isub=");0<g&&(A(f),f.g(e.substring(0,g)));if(!Db(f.toString()))
+
+throw Error(document.getElementById('validity-indicator-div').innerHTML = 'Invalid ✗');
+// throw Error("The string supplied did not seem to be a phone number");
+
+e=f.toString();if(!(Ib(c)||null!=e&&0<e.length&&nb.test(e)))throw Error("Invalid country calling code");
 e=new H;d&&t(e,5,b);a:{b=f.toString();g=b.search(wb);if(0<=g&&Db(b.substring(0,g))){h=b.match(wb);for(var m=h.length,p=1;p<m;++p)if(null!=h[p]&&0<h[p].length){A(f);f.g(b.substring(0,g));b=h[p];break a}}b=""}0<b.length&&t(e,3,b);g=Q(a,c);b=new z;h=0;m=f.toString();try{h=tc(a,m,g,b,d,e)}catch(r){if("Invalid country calling code"==r.message&&nb.test(m)){if(m=m.replace(nb,""),h=tc(a,m,g,b,d,e),0==h)throw r;}else throw r;}0!=h?(f=P(h),f!=c&&(g=O(a,h,f))):(Fb(f),b.g(f.toString()),null!=c?(h=v(g,10),t(e,
-1,h)):d&&Qa(e,6));if(2>b.h.length)throw Error("The string supplied is too short to be a phone number");null!=g&&(c=new z,f=new z(b.toString()),uc(f,g,c),a=qc(a,f.toString(),g,-1),2!=a&&4!=a&&5!=a&&(b=f,d&&0<c.toString().length&&t(e,7,c.toString())));d=b.toString();a=d.length;if(2>a)throw Error("The string supplied is too short to be a phone number");if(17<a)throw Error("The string supplied is too long to be a phone number");if(1<d.length&&"0"==d.charAt(0)){t(e,4,!0);for(a=1;a<d.length-1&&"0"==d.charAt(a);)a++;
+1,h)):d&&Qa(e,6));if(2>b.h.length)
+
+throw Error(document.getElementById('validity-indicator-div').innerHTML = 'Invalid ✗');
+// throw Error("The string supplied is too short to be a phone number");
+
+null!=g&&(c=new z,f=new z(b.toString()),uc(f,g,c),a=qc(a,f.toString(),g,-1),2!=a&&4!=a&&5!=a&&(b=f,d&&0<c.toString().length&&t(e,7,c.toString())));d=b.toString();a=d.length;if(2>a)throw Error("The string supplied is too short to be a phone number");if(17<a)throw Error("The string supplied is too long to be a phone number");if(1<d.length&&"0"==d.charAt(0)){t(e,4,!0);for(a=1;a<d.length-1&&"0"==d.charAt(a);)a++;
 1!=a&&t(e,8,a)}t(e,2,parseInt(d,10));return e}function wc(a,b){a=Q(a,mc(a,b));if(null==a)return!0;b=N(b);return!R(b,q(a,24))}function K(a,b){return(a="string"==typeof a?b.match("^(?:"+a+")$"):b.match(a))&&a[0].length==b.length?!0:!1};function xc(a){this.fa=/\u2008/;this.ma="";this.v=new z;this.da="";this.s=new z;this.ba=new z;this.u=!0;this.ea=this.ca=this.oa=!1;this.ga=hb.ja();this.$=0;this.h=new z;this.ha=!1;this.o="";this.g=new z;this.j=[];this.na=a;this.l=yc(this,this.na)}var zc=new F;t(zc,11,"NA");
 var Ac=/^[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\[\]/~\u2053\u223c\uff5e]*\$1[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\[\]/~\u2053\u223c\uff5e]*(\$\d[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\[\]/~\u2053\u223c\uff5e]*)*$/,Bc=/[- ]/;function yc(a,b){var c=a.ga;b=Ib(b)?Pb(c,b):0;a=Q(a.ga,P(b));return null!=a?a:zc}
 function Cc(a){for(var b=a.j.length,c=0;c<b;++c){var d=a.j[c],f=v(d,1);if(a.da==f)return!1;var e=a;var g=d,h=v(g,1);A(e.v);var m=e;g=v(g,2);var p="999999999999999".match(h)[0];p.length<m.g.h.length?m="":(m=p.replace(new RegExp(h,"g"),g),m=m.replace(/9/g,"\u2008"));0<m.length?(e.v.g(m),e=!0):e=!1;if(e)return a.da=f,a.ha=Bc.test(q(d,4)),a.$=0,!0}return a.u=!1}
@@ -679,7 +691,11 @@ function Tc(a,b){if(!b)return null;b=b.toUpperCase();var c=a.g[b];if(null==c){c=
 function Uc(a){if(!n(a,2))return"";var b=""+q(a,2);return n(a,4)&&q(a,4)&&0<v(a,8)?Array(v(a,8)+1).join("0")+b:b}
 function Vc(a,b){return 0<u(b,9).length&&!u(b,9).includes(a.length)?!1:K(v(b,2),a.toString())};var S=hb.ja();
 function Wc(a){switch(lc(S,a)){case 0:return"FIXED_LINE";case 1:return"MOBILE";case 2:return"FIXED_LINE_OR_MOBILE";case 3:return"TOLL_FREE";case 4:return"PREMIUM_RATE";case 5:return"SHARED_COST";case 6:return"VOIP";case 7:return"PERSONAL_NUMBER";case 8:return"PAGER";case 9:return"UAN";case -1:return"UNKNOWN"}}
-function Xc(){var a=wa("phoneNumber").value,b=wa("defaultCountry").value.toUpperCase(),c=wa("carrierCode").value,d=new z;try{var f=S;if(!Ib(b)&&0<a.length&&"+"!=a.charAt(0))throw Error("Invalid country calling code");
+function Xc(){var a=wa("phoneNumber").value,b=wa("defaultCountry").value.toUpperCase(),c=wa("carrierCode").value,d=new z;try{var f=S;if(!Ib(b)&&0<a.length&&"+"!=a.charAt(0))
+
+// throw Error("Invalid country calling code");
+throw Error(document.getElementById('validity-indicator-div').innerHTML = 'Invalid ✗');
+
 var e=vc(f,a,b,!0);
 d.g("****Parsing Result:****\n");
 d.g(JSON.stringify((new y(1)).l(e)));
@@ -693,7 +709,7 @@ if(h)
 if(4==m)
 d.g("\nResult from isPossibleNumberWithReason(): "),
 d.g("IS_POSSIBLE_LOCAL_ONLY"),
-document.getElementById('validity-indicator-div').innerHTML = 'Not a valid International Number ✗',
+document.getElementById('validity-indicator-div').innerHTML = 'Invalid ✗',
 d.g("\nNumber is considered invalid as it is not a possible national number.");
 else{
 var p=oc(S,e);
@@ -702,15 +718,15 @@ d.g("\nResult from isValidNumber(): ");
 d.g(p);
 d.g(isValidOrNot); 
 
-alert(p);
-alert(`this is the isValid variable ${isValidOrNot}`);
+//alert(p);
+//alert(`this is the isValid variable ${isValidOrNot}`);
 
 if (isValidOrNot === true) {
-    alert("Valid");
+    //alert("Valid");
     document.getElementById('validity-indicator-div').innerHTML = 'Valid ✓';
 }
 else {
-    alert("Invalid");
+    //alert("Invalid");
     document.getElementById('validity-indicator-div').innerHTML = 'Invalid ✗';
 }
 
