@@ -681,10 +681,28 @@ function Vc(a,b){return 0<u(b,9).length&&!u(b,9).includes(a.length)?!1:K(v(b,2),
 function Wc(a){switch(lc(S,a)){case 0:return"FIXED_LINE";case 1:return"MOBILE";case 2:return"FIXED_LINE_OR_MOBILE";case 3:return"TOLL_FREE";case 4:return"PREMIUM_RATE";case 5:return"SHARED_COST";case 6:return"VOIP";case 7:return"PERSONAL_NUMBER";case 8:return"PAGER";case 9:return"UAN";case -1:return"UNKNOWN"}}
 function Xc(){var a=wa("phoneNumber").value,b=wa("defaultCountry").value.toUpperCase(),c=wa("carrierCode").value,d=new z;try{var f=S;if(!Ib(b)&&0<a.length&&"+"!=a.charAt(0))throw Error("Invalid country calling code");
 var e=vc(f,a,b,!0);
-// d.g("****Parsing Result:****\n");
-// d.g(JSON.stringify((new y(1)).l(e)));
-d.g("\n\n****Validation Results:****");var g=rc(e);var h=0==g||4==g;d.g("\nResult from isPossibleNumber(): ");d.g(h);var m=rc(e);f=b&&"ZZ"!=b;if(h)if(4==m)d.g("\nResult from isPossibleNumberWithReason(): "),
-d.g("IS_POSSIBLE_LOCAL_ONLY"),d.g("\nNumber is considered invalid as it is not a possible national number.");else{var p=oc(S,e);d.g("\nResult from isValidNumber(): ");d.g(p);p&&f&&(d.g("\nResult from isValidNumberForRegion(): "),d.g(pc(S,e,b)));d.g("\nPhone Number region: ");d.g(mc(S,e));d.g("\nResult from getNumberType(): ");d.g(Wc(e))}else{d.g("\nResult from isPossibleNumberWithReason(): ");switch(m){case 1:d.g("INVALID_COUNTRY_CODE");break;case 2:d.g("TOO_SHORT");break;case 3:d.g("TOO_LONG");break;
+d.g("****Parsing Result:****\n");
+d.g(JSON.stringify((new y(1)).l(e)));
+d.g("\n\n****Validation Results:****");
+var g=rc(e);var h=0==g||4==g;
+d.g("\nResult from isPossibleNumber(): ");
+d.g(h);
+var m=rc(e);
+f=b&&"ZZ"!=b;
+if(h)
+if(4==m)
+d.g("\nResult from isPossibleNumberWithReason(): "),
+d.g("IS_POSSIBLE_LOCAL_ONLY"),
+d.g("\nNumber is considered invalid as it is not a possible national number.");
+else{
+var p=oc(S,e);
+d.g("\nResult from isValidNumber(): ");
+d.g(p);
+
+alert(p);
+(p === false ? alert("Number is not valid") : alert("Number is valid"))
+
+p&&f&&(d.g("\nResult from isValidNumberForRegion(): "),d.g(pc(S,e,b)));d.g("\nPhone Number region: ");d.g(mc(S,e));d.g("\nResult from getNumberType(): ");d.g(Wc(e))}else{d.g("\nResult from isPossibleNumberWithReason(): ");switch(m){case 1:d.g("INVALID_COUNTRY_CODE");break;case 2:d.g("TOO_SHORT");break;case 3:d.g("TOO_LONG");break;
 case 5:d.g("INVALID_LENGTH")}d.g("\nNote: Numbers that are not possible have type UNKNOWN, an unknown region, and are considered invalid.")}if(!p){var r=Pc.ja();d.g("\n\n****ShortNumberInfo Results:****");d.g("\nResult from isPossibleShortNumber: ");var ha=d.g;a:{var Tb=Qc(v(e,1)),Zc=Uc(e).length;for(h=0;h<Tb.length;h++){var Ub=Tc(r,Tb[h]);if(Ub&&u(q(Ub,1),9).includes(Zc)){var Vb=!0;break a}}Vb=!1}ha.call(d,Vb);d.g("\nResult from isValidShortNumber: ");var $c=d.g,W=Qc(v(e,1));a:if(0===W.length)var ia=
 null;else if(1===W.length)ia=W[0];else{var ad=Uc(e);for(ha=0;ha<W.length;ha++){var Wb=W[ha],Xb=Tc(r,Wb);if(Xb&&Vc(ad,q(Xb,29))){ia=Wb;break a}}ia=null}var bd=1<W.length&&null!=ia?!0:Sc(r,e,ia);$c.call(d,bd);if(f){d.g("\nResult from isPossibleShortNumberForRegion: ");var cd=d.g;if(Rc(e,b)){var Yb=Tc(r,b);if(Yb){var dd=Uc(e).length;var Sa=u(q(Yb,1),9).includes(dd)}else Sa=!1}else Sa=!1;cd.call(d,Sa);d.g("\nResult from isValidShortNumberForRegion: ");d.g(Sc(r,e,b))}}d.g("\n\n****Formatting Results:**** ");
 d.g("\nE164 format: ");d.g(p?M(S,e,0):"invalid");d.g("\nOriginal format: ");var X=d.g;r=S;var Y;if(Y=n(e,5)){var Zb=v(e,1),$b=O(r,Zb,P(Zb));if(null==$b)var ac=!1;else{var ed=N(e);ac=null!=Qb(u($b,19),ed)}Y=!ac}if(Y)var ja=v(e,5);else if(n(e,6)){switch(q(e,6)){case 1:var B=M(r,e,1);break;case 5:B=Ob(r,e,b);break;case 10:B=M(r,e,1).substring(1);break;default:var ka=P(v(e,1));var bc=Q(r,ka);if(null==bc)var la=null;else{var Ta=v(bc,12);la=0==Ta.length?null:Ta=Ta.replace("~","")}var ma=M(r,e,2);if(null==
