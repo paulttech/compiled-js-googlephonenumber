@@ -696,11 +696,15 @@ d.g("IS_POSSIBLE_LOCAL_ONLY"),
 d.g("\nNumber is considered invalid as it is not a possible national number.");
 else{
 var p=oc(S,e);
+var isValidOrNot=oc(S,e);
 d.g("\nResult from isValidNumber(): ");
 d.g(p);
+d.g(isValidOrNot); 
 
 alert(p);
-(p === false ? alert("Number is not valid") : alert("Number is valid"))
+alert(`this is the isValid variable ${isValidOrNot}`);
+
+(isValidOrNot === false ? alert("Invalid") : alert("Valid"))
 
 p&&f&&(d.g("\nResult from isValidNumberForRegion(): "),d.g(pc(S,e,b)));d.g("\nPhone Number region: ");d.g(mc(S,e));d.g("\nResult from getNumberType(): ");d.g(Wc(e))}else{d.g("\nResult from isPossibleNumberWithReason(): ");switch(m){case 1:d.g("INVALID_COUNTRY_CODE");break;case 2:d.g("TOO_SHORT");break;case 3:d.g("TOO_LONG");break;
 case 5:d.g("INVALID_LENGTH")}d.g("\nNote: Numbers that are not possible have type UNKNOWN, an unknown region, and are considered invalid.")}if(!p){var r=Pc.ja();d.g("\n\n****ShortNumberInfo Results:****");d.g("\nResult from isPossibleShortNumber: ");var ha=d.g;a:{var Tb=Qc(v(e,1)),Zc=Uc(e).length;for(h=0;h<Tb.length;h++){var Ub=Tc(r,Tb[h]);if(Ub&&u(q(Ub,1),9).includes(Zc)){var Vb=!0;break a}}Vb=!1}ha.call(d,Vb);d.g("\nResult from isValidShortNumber: ");var $c=d.g,W=Qc(v(e,1));a:if(0===W.length)var ia=
